@@ -131,6 +131,8 @@ public class CafeApp {
     }
 
     static void main() {
+        // TODO: Wrap the order logic to support multiple customers with and "end-of-day" report.
+
         // Prepare the order with an empty order object.
         Order order = new Order();
 
