@@ -52,12 +52,26 @@ public class CafeApp {
         // Prepare for user input with a Scanner object.
         Scanner scanner = new Scanner(System.in);
 
-        // Get user input.
+        // Get customer name.
         System.out.print("Welcome! What is your name? ");
         order.setCustomerName(scanner.nextLine());
 
         // Render the menu.
         getMenu(order);
+
+        // Get customer choices.
+        System.out.print("Enter item number (1-5): ");
+        order.setItemNumber(scanner.nextInt());
+        System.out.print("How many? ");
+        order.setItemQuantity(scanner.nextInt());
+
+        // Because nextInt, nextDouble etc. do not consume the newline character,
+        // insert an extra scanner.nextLine() to solve this,
+        scanner.nextLine();
+
+        System.out.print("Loyalty member (yes/no)? ");
+        order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
+
 
 
     }

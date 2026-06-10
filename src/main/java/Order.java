@@ -1,6 +1,6 @@
 public class Order {
     private String customerName;
-    private String itemName;
+    private int itemNumber;
     private int itemQuantity;
     private boolean isMember;
     private double itemPrice;
@@ -17,12 +17,12 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public String getItemName() {
-        return itemName;
+    public int getItemNumber() {
+        return itemNumber;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setItemNumber(int itemNumber) {
+        this.itemNumber = itemNumber;
     }
 
     public int getItemQuantity() {
