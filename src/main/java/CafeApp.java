@@ -39,9 +39,61 @@ public class CafeApp {
                 2. Cappuccino        35.00 SEK
                 3. Latte             40.00 SEK
                 4. Croissant         30.00 SEK
-                5. Sandwitch         50.00 SEK
+                5. Sandwich          50.00 SEK
                 ==============================
                 """);
+    }
+
+    static void getReceipt(Order order) {
+        // Finalize the values in the Order object.
+        // Some are missing, like itemName, itemPrice, subTotal
+        // and subTotalDiscount.
+        switch (order.getItemNumber()) {
+            case 1 -> {
+                order.setItemName("Espresso");
+                order.setItemPrice(25.00);
+            }
+            case 2 -> {
+                order.setItemName("Cappuccino");
+                order.setItemPrice(35.00);
+            }
+            case 3 -> {
+                order.setItemName("Latte");
+                order.setItemPrice(40.00);
+            }
+            case 4 -> {
+                order.setItemName("Croissant");
+                order.setItemPrice(30.00);
+            }
+            case 5 -> {
+                order.setItemName("Sandwich");
+                order.setItemPrice(50.00);
+            }
+        }
+
+        // Calculate the subtotal, starting with a check for loyalty discount or not.
+        // Calculate subtotal (price * quantity)
+        order.setSubTotal(order.getItemPrice() * order.getItemQuantity());
+
+        if (order.isMember()) {
+            // Get the 15% discount for being a member
+            order.setSubTotalDiscount(order.getSubTotal() * 0.15);
+        } else {
+            // Get the 10% discount for shopping for 150 SEK or more
+            if (order.getSubTotal() >= 150) {
+                order.setSubTotalDiscount(order.getSubTotal() * 0.1);
+            } else {
+                // No discount applied
+                order.setSubTotalDiscount(0);
+            }
+        }
+
+        // Get the 12% VAT
+        order.setSubTotalVat((order.getSubTotal() - order.getSubTotalDiscount()) * 0.12);
+        // Set the total price by subtracting discount from subtotal
+        order.setTotalPrice(order.getSubTotal() - order.getSubTotalDiscount() + order.getSubTotalVat());
+
+        System.out.println("Test");
     }
 
     static void main() {
@@ -72,7 +124,8 @@ public class CafeApp {
         System.out.print("Loyalty member (yes/no)? ");
         order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
 
-
+        // Render the receipt
+        getReceipt(order);
 
     }
 }
