@@ -29,25 +29,41 @@ import java.util.Scanner;
 
 public class CafeApp {
 
-    static void getMenu(Order order) {
-        System.out.println("\nHi " + order.getCustomerName() + "! This is our menu:\n");
-        System.out.print("""
-                ==============================
-                        Lexicon Café
-                ==============================
-                1. Espresso          25.00 SEK
-                2. Cappuccino        35.00 SEK
-                3. Latte             40.00 SEK
-                4. Croissant         30.00 SEK
-                5. Sandwich          50.00 SEK
-                ==============================
-                """);
+    static void displayMenu(Order order) {
+        // TODO: Extract the names and prices to be accessible by this menu also. Prepared with printf().
+        System.out.printf("\nHi %s! This is our menu:\n\n", order.getCustomerName());
+        System.out.println("==============================");
+        System.out.println("        Lexicon Café");
+        System.out.println("==============================");
+        System.out.printf("1. %s\t\t\t%.2f SEK\n", "Espresso", 25.00);
+        System.out.printf("2. %s\t\t%.2f SEK\n", "Cappuccino", 35.00);
+        System.out.printf("3. %s\t\t\t%.2f SEK\n", "Latte", 40.00);
+        System.out.printf("4. %s\t\t%.2f SEK\n", "Croissant", 30.00);
+        System.out.printf("5. %s\t\t\t%.2f SEK\n", "Sandwich", 50.00);
+        System.out.println("==============================");
     }
 
-    static void getReceipt(Order order) {
+    static void displayReceipt(Order order) {
+        System.out.println("==============================");
+        System.out.println("        Lexicon Café");
+        System.out.println("==============================");
+        System.out.printf("Customer:   : %s\n", order.getCustomerName());
+        System.out.printf("Item:       : %s x %d\n", order.getItemName(), order.getItemQuantity());
+        System.out.printf("Subtotal:   : %.2f SEK\n", order.getSubTotal());
+        System.out.printf("Discount:   : -%.2f SEK\n", order.getSubTotalDiscount());
+        System.out.printf("VAT:        : %.2f SEK\n", order.getSubTotalVat());
+        System.out.println("------------------------------");
+        System.out.printf("Total:      : %.2f SEK\n", order.getTotalPrice());
+        System.out.println("==============================");
+        System.out.printf("    Thank you, %s!\n    See you next time.\n", order.getCustomerName());
+        System.out.println("==============================");
+    }
+
+    static void calculateReceipt(Order order) {
         // Finalize the values in the Order object.
         // Some are missing, like itemName, itemPrice, subTotal
         // and subTotalDiscount.
+        // TODO: Extract the names and prices to be accessible by the menu also
         switch (order.getItemNumber()) {
             case 1 -> {
                 order.setItemName("Espresso");
@@ -92,8 +108,6 @@ public class CafeApp {
         order.setSubTotalVat((order.getSubTotal() - order.getSubTotalDiscount()) * 0.12);
         // Set the total price by subtracting discount from subtotal
         order.setTotalPrice(order.getSubTotal() - order.getSubTotalDiscount() + order.getSubTotalVat());
-
-        System.out.println("Test");
     }
 
     static void main() {
@@ -108,8 +122,8 @@ public class CafeApp {
         System.out.print("Welcome! What is your name? ");
         order.setCustomerName(scanner.nextLine());
 
-        // Render the menu.
-        getMenu(order);
+        // Display the menu.
+        displayMenu(order);
 
         // Get customer choices.
         System.out.print("Enter item number (1-5): ");
@@ -124,8 +138,11 @@ public class CafeApp {
         System.out.print("Loyalty member (yes/no)? ");
         order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
 
-        // Render the receipt
-        getReceipt(order);
+        // Calculate the receipt
+        calculateReceipt(order);
+
+        // Display the receipt
+        displayReceipt(order);
 
     }
 }
