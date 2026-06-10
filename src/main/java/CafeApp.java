@@ -32,17 +32,29 @@ import java.util.Scanner;
 
 public class CafeApp {
 
+    // Set some product values globally accessible
+    // This was the closest way I could find of replicating
+    // the TypeScript "array of objects", like:
+    // [{ id: 1, name: 'Name', price: 10.00 }]
+    record Product(int id, String name, double price) {}
+    static Product[] products = {
+            new Product(1, "Espresso", 25.00),
+            new Product(2, "Cappuccino", 35.00),
+            new Product(3, "Latte", 40.00),
+            new Product(4, "Croissant", 30.00),
+            new Product(5, "Sandwich", 50.00)
+    };
+
     static void displayMenu(Order order) {
-        // TODO: Extract the names and prices to be accessible by this menu also. Prepared with printf().
         System.out.printf("\nHi %s! This is our menu:\n\n", order.getCustomerName());
         System.out.println("==============================");
         System.out.println("        Lexicon Café");
         System.out.println("==============================");
-        System.out.printf("1. %s\t\t\t%.2f SEK\n", "Espresso", 25.00);
-        System.out.printf("2. %s\t\t%.2f SEK\n", "Cappuccino", 35.00);
-        System.out.printf("3. %s\t\t\t%.2f SEK\n", "Latte", 40.00);
-        System.out.printf("4. %s\t\t%.2f SEK\n", "Croissant", 30.00);
-        System.out.printf("5. %s\t\t\t%.2f SEK\n", "Sandwich", 50.00);
+        System.out.printf("%d. %s\t\t\t%.2f SEK\n", products[0].id, products[0].name, products[0].price);
+        System.out.printf("%d. %s\t\t%.2f SEK\n", products[1].id, products[1].name, products[1].price);
+        System.out.printf("%d. %s\t\t\t%.2f SEK\n", products[2].id, products[2].name, products[2].price);
+        System.out.printf("%d. %s\t\t%.2f SEK\n", products[3].id, products[3].name, products[3].price);
+        System.out.printf("%d. %s\t\t\t%.2f SEK\n", products[4].id, products[4].name, products[4].price);
         System.out.println("==============================");
     }
 
@@ -66,27 +78,26 @@ public class CafeApp {
         // Finalize the values in the Order object.
         // Some are missing, like itemName, itemPrice, subTotal
         // and subTotalDiscount.
-        // TODO: Extract the names and prices to be accessible by the menu also
         switch (order.getItemNumber()) {
             case 1 -> {
-                order.setItemName("Espresso");
-                order.setItemPrice(25.00);
+                order.setItemName(products[0].name);
+                order.setItemPrice(products[0].price);
             }
             case 2 -> {
-                order.setItemName("Cappuccino");
-                order.setItemPrice(35.00);
+                order.setItemName(products[1].name);
+                order.setItemPrice(products[1].price);
             }
             case 3 -> {
-                order.setItemName("Latte");
-                order.setItemPrice(40.00);
+                order.setItemName(products[2].name);
+                order.setItemPrice(products[2].price);
             }
             case 4 -> {
-                order.setItemName("Croissant");
-                order.setItemPrice(30.00);
+                order.setItemName(products[3].name);
+                order.setItemPrice(products[3].price);
             }
             case 5 -> {
-                order.setItemName("Sandwich");
-                order.setItemPrice(50.00);
+                order.setItemName(products[4].name);
+                order.setItemPrice(products[4].price);
             }
         }
 
@@ -120,7 +131,6 @@ public class CafeApp {
     }
 
     static void main() {
-
         // Prepare the order with an empty order object.
         Order order = new Order();
 
