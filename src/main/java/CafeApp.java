@@ -20,6 +20,9 @@ import java.util.Scanner;
  *
  *       - I would suggest all information needed for the method's internal logic should
  *         be supplied as parameters.
+ *       - EDIT: Maybe I misunderstood the question. I mean, Main shouldn't do calculations.
+ *         Those should be done inside the method, but the method shouldn't have to compile
+ *         information from outside the scope of the method... if you get what I mean.
  *
  * 5. If a piece of logic feels difficult to explain, can it be broken into smaller steps?
  *
@@ -50,7 +53,7 @@ public class CafeApp {
         System.out.printf("Customer:   : %s\n", order.getCustomerName());
         System.out.printf("Item:       : %s x %d\n", order.getItemName(), order.getItemQuantity());
         System.out.printf("Subtotal:   : %.2f SEK\n", order.getSubTotal());
-        System.out.printf("Discount:   : -%.2f SEK\n", order.getSubTotalDiscount());
+        System.out.printf("Discount:   : %.2f SEK\n", order.getSubTotalDiscount());
         System.out.printf("VAT:        : %.2f SEK\n", order.getSubTotalVat());
         System.out.println("------------------------------");
         System.out.printf("Total:      : %.2f SEK\n", order.getTotalPrice());
@@ -91,6 +94,12 @@ public class CafeApp {
         // Calculate subtotal (price * quantity)
         order.setSubTotal(order.getItemPrice() * order.getItemQuantity());
 
+        /* Changing the logic for calculating the final price. It feels
+         * like fooling the customer if the VAT is added to the prices
+         * on the menu. All prices for private customers are basically
+         * always INCLUDING VAT, so I'll change accordingly below.
+         */
+
         if (order.isMember()) {
             // Get the 15% discount for being a member
             order.setSubTotalDiscount(order.getSubTotal() * 0.15);
@@ -107,7 +116,7 @@ public class CafeApp {
         // Get the 12% VAT
         order.setSubTotalVat((order.getSubTotal() - order.getSubTotalDiscount()) * 0.12);
         // Set the total price by subtracting discount from subtotal
-        order.setTotalPrice(order.getSubTotal() - order.getSubTotalDiscount() + order.getSubTotalVat());
+        order.setTotalPrice(order.getSubTotal() - order.getSubTotalDiscount());
     }
 
     static void main() {
@@ -143,6 +152,5 @@ public class CafeApp {
 
         // Display the receipt
         displayReceipt(order);
-
     }
 }
