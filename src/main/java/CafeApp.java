@@ -155,18 +155,50 @@ void main() {
         // Display the menu.
         displayMenu(order);
 
-        // Get customer choices.
-        IO.print("Enter item number (1-5): ");
-        order.setItemNumber(scanner.nextInt());
-        IO.print("How many? ");
-        order.setItemQuantity(scanner.nextInt());
+        // Get customer choices. Loop until a valid value (i.e. a number) is entered.
+        while (true) {
+            try {
+                IO.print("Enter item number (1-5): ");
+                order.setItemNumber(scanner.nextInt());
+                break;
+            } catch (Exception e) {
+                // Because nextInt, nextDouble etc. do not consume the newline character,
+                // insert an extra scanner.nextLine() to solve this,
+                scanner.nextLine();
+                IO.println("\u001B[31m" + "Not a number. Try again." + "\u001B[0m");
+            }
+        }
+
+        while (true) {
+            try {
+                IO.print("How many? ");
+                order.setItemQuantity(scanner.nextInt());
+                break;
+            } catch (Exception e) {
+                // Because nextInt, nextDouble etc. do not consume the newline character,
+                // insert an extra scanner.nextLine() to solve this,
+                scanner.nextLine();
+                IO.println("\u001B[31m" + "Not a number. Try again." + "\u001B[0m");
+            }
+        }
 
         // Because nextInt, nextDouble etc. do not consume the newline character,
         // insert an extra scanner.nextLine() to solve this,
         scanner.nextLine();
 
-        IO.print("Loyalty member (yes/no)? ");
-        order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
+        while (true) {
+            IO.print("Loyalty member (yes/no)? ");
+            String choice = scanner.nextLine().toLowerCase();
+            if (choice.equals("yes")) {
+                order.setMember(true);
+                break;
+            } else if (choice.equals("no")) {
+                order.setMember(false);
+                break;
+            } else {
+                IO.println("\u001B[31m" + "Only \"yes\" or \"no\" are valid choices." + "\u001B[0m");
+            }
+        }
 
         // Calculate the receipt
         calculateReceipt(order);
