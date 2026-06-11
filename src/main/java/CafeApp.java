@@ -72,6 +72,15 @@ static void displayReceipt(Order order) {
     IO.println("==============================");
 }
 
+static void endOfDayReport(int numberOfCustomers, double totalRevenue) {
+    IO.println("==============================");
+    IO.println("       End of Day Report");
+    IO.println("==============================");
+    System.out.printf("Customers served : %d\n", numberOfCustomers);
+    System.out.printf("Total revenue    : %.2f\n", totalRevenue);
+    IO.println("==============================");
+}
+
 static void calculateReceipt(Order order) {
     // Finalize the values in the Order object.
     // Some are missing, like itemName, itemPrice, subTotal
@@ -129,37 +138,49 @@ static void calculateReceipt(Order order) {
 }
 
 void main() {
-    // TODO: Wrap the order logic to support multiple customers with and "end-of-day" report.
+    int customersServed = 0;
+    double totalRevenue = 0.0;
 
-    // Prepare the order with an empty order object.
-    Order order = new Order();
+    while (true) {
+        // Prepare the order with an empty order object.
+        Order order = new Order();
 
-    // Prepare for user input with a Scanner object.
-    Scanner scanner = new Scanner(System.in);
+        // Prepare for user input with a Scanner object.
+        Scanner scanner = new Scanner(System.in);
 
-    // Get customer name.
-    IO.print("Welcome! What is your name? ");
-    order.setCustomerName(scanner.nextLine());
+        // Get customer name.
+        IO.print("Welcome! What is your name? ");
+        order.setCustomerName(scanner.nextLine());
 
-    // Display the menu.
-    displayMenu(order);
+        // Display the menu.
+        displayMenu(order);
 
-    // Get customer choices.
-    IO.print("Enter item number (1-5): ");
-    order.setItemNumber(scanner.nextInt());
-    IO.print("How many? ");
-    order.setItemQuantity(scanner.nextInt());
+        // Get customer choices.
+        IO.print("Enter item number (1-5): ");
+        order.setItemNumber(scanner.nextInt());
+        IO.print("How many? ");
+        order.setItemQuantity(scanner.nextInt());
 
-    // Because nextInt, nextDouble etc. do not consume the newline character,
-    // insert an extra scanner.nextLine() to solve this,
-    scanner.nextLine();
+        // Because nextInt, nextDouble etc. do not consume the newline character,
+        // insert an extra scanner.nextLine() to solve this,
+        scanner.nextLine();
 
-    IO.print("Loyalty member (yes/no)? ");
-    order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
+        IO.print("Loyalty member (yes/no)? ");
+        order.setMember(scanner.nextLine().equalsIgnoreCase("yes"));
 
-    // Calculate the receipt
-    calculateReceipt(order);
+        // Calculate the receipt
+        calculateReceipt(order);
 
-    // Display the receipt
-    displayReceipt(order);
+        // Display the receipt
+        displayReceipt(order);
+
+        // Move forward to handle next possible customer
+        totalRevenue += order.getTotalPrice();
+        customersServed++;
+        IO.print("Press enter for next customer or type \"done\" to quit: ");
+        if (scanner.nextLine().equalsIgnoreCase("done")) {
+            endOfDayReport(customersServed, totalRevenue);
+            break;
+        }
+    }
 }
