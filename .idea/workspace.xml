@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cb98c28d-16af-4f90-bc73-e94b77f6df56" name="Changes" comment="Add End of Day Report for multiple customers.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CafeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CafeApp.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="input-validation-and-error-handling" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dan-lundberg-git&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dan-lundberg-git/lexicon-java-laboration-3.git&quot;,
+    &quot;accountId&quot;: &quot;b5af2617-03ed-4d06-817e-4e63c358b33d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Ew2lTd0aItIPUPA67dLPexiS9W" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CafeApp.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2529928",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CafeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="UNNAMED_CLASS_CONFIGURATION" value="true" />
+      <option name="MAIN_CLASS_NAME" value="CafeApp" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CafeApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb98c28d-16af-4f90-bc73-e94b77f6df56" name="Changes" comment="" />
+      <created>1781075461453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781075461453</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit. Add README.md with workshop instructions.">
+      <option name="closed" value="true" />
+      <created>1781075895661</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1781075895661</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add class Order and a method for displaying a menu.">
+      <option name="closed" value="true" />
+      <created>1781079281836</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1781079281836</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add refactored code plus more user input.">
+      <option name="closed" value="true" />
+      <created>1781080992833</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1781080992833</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add method for calculating a total cost.">
+      <option name="closed" value="true" />
+      <created>1781083361615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1781083361615</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add method for displaying the receipt. The logic for calculating VAT seems weird though, so I'll take another look after lunch.">
+      <option name="closed" value="true" />
+      <created>1781085801683</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1781085801683</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update VAT calculating to be included instead of excluded.">
+      <option name="closed" value="true" />
+      <created>1781091130313</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1781091130313</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactored code to use Record for globally accessible values.">
+      <option name="closed" value="true" />
+      <created>1781092823359</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1781092823359</updated>
+    </task>
+    <task id="LOCAL-00008" summary="New brach for upcoming changes to order logic.">
+      <option name="closed" value="true" />
+      <created>1781096643491</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1781096643491</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update to use compact source file declaration instead.">
+      <option name="closed" value="true" />
+      <created>1781158345982</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1781158345982</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add End of Day Report for multiple customers.">
+      <option name="closed" value="true" />
+      <created>1781160701636</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1781160701636</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit. Add README.md with workshop instructions." />
+    <MESSAGE value="Add class Order and a method for displaying a menu." />
+    <MESSAGE value="Add refactored code plus more user input." />
+    <MESSAGE value="Add method for calculating a total cost." />
+    <MESSAGE value="Add method for displaying the receipt. The logic for calculating VAT seems weird though, so I'll take another look after lunch." />
+    <MESSAGE value="Update VAT calculating to be included instead of excluded." />
+    <MESSAGE value="Refactored code to use Record for globally accessible values." />
+    <MESSAGE value="New brach for upcoming changes to order logic." />
+    <MESSAGE value="Update to use compact source file declaration instead." />
+    <MESSAGE value="Add End of Day Report for multiple customers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add End of Day Report for multiple customers." />
+  </component>
+</project>
